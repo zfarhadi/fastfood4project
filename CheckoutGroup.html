@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>پرداخت گروهی </title>
+  <link href="https://cdn.fontcdn.ir/Font/Vazir/Vazir.css" rel="stylesheet"/>
+  <link href="css\style.css" rel="stylesheet"/>
+</head>
+<body class="checkG-bodyG">
+  <h2 class="page-titleG">پرداخت گروهی - فست فود مارگاریتا</h2>
+  <div class="containerG">
+    <div class="persons-containerG">
+      <section class="person-cardG">
+        <h3 class="person-headerG">فرهادی</h3>
+        <ul class="item-listG">
+          <li><input checked type="checkbox"/><label>پیتزا مارگاریتا</label><span class="priceG">120,000 تومان</span></li>
+          <li><input checked type="checkbox"/><label>پاستا آلفردو</label><span class="priceG">150,000 تومان</span></li>
+        </ul>
+        <div class="priceG person-totalG">مبلغ قابل پرداخت: 270,000 تومان</div>
+        <button class="pay-btnG">پرداخت</button>
+      </section>
+      <section class="person-cardG">
+        <h3 class="person-headerG">رستمی</h3>
+        <ul class="item-listG">
+          <li><input checked type="checkbox"/><label>پیتزا پپرونی</label><span class="priceG">140,000 تومان</span></li>
+          <li><input checked type="checkbox"/><label>سالاد سزار</label><span class="priceG">80,000 تومان</span></li>
+        </ul>
+        <div class="priceG person-totalG">مبلغ قابل پرداخت: 220,000 تومان</div>
+        <button class="pay-btnG">پرداخت</button>
+      </section>
+      <section class="person-cardG">
+        <h3 class="person-headerG">اسماعیلی</h3>
+        <ul class="item-listG">
+          <li><input checked type="checkbox"/><label>چیزبرگر</label><span class="priceG">90,000 تومان</span></li>
+          <li><input checked type="checkbox"/><label>نوشابه</label><span class="priceG">15,000 تومان</span></li>
+        </ul>
+        <div class="priceG person-totalG">مبلغ قابل پرداخت: 105,000 تومان</div>
+        <button class="pay-btnG">پرداخت</button>
+      </section>
+    </div>
+    <div class="all-items-containerG">
+      <div class="items-headerG">لیست سفارشات</div>
+      <div class="items-columnsG">
+        <div>نام محصول</div>
+        <div>تعداد</div>
+        <div>سفارش‌دهنده</div>
+        <div class="priceG">قیمت</div>
+      </div>
+      <div class="items-listG">
+        <div><span>پیتزا مارگاریتا</span><span>1</span><span>فرهادی</span><span class="priceG">120,000 تومان</span></div>
+        <div><span>پیتزا پپرونی</span><span>1</span><span>رستمی</span><span class="priceG">140,000 تومان</span></div>
+        <div><span>چیزبرگر</span><span>1</span><span>اسماعیلی</span><span class="priceG">90,000 تومان</span></div>
+        <div><span>پاستا آلفردو</span><span>1</span><span>فرهادی</span><span class="priceG">150,000 تومان</span></div>
+        <div><span>سالاد سزار</span><span>1</span><span>رستمی</span><span class="priceG">80,000 تومان</span></div>
+        <div><span>نوشابه</span><span>1</span><span>اسماعیلی</span><span class="priceG">15,000 تومان</span></div>
+      </div>
+      <div class="total-sumG">مجموع کل: 795,000 تومان</div>
+    </div>
+  </div>
+
+  <!-- Modal QR Code -->
+  <div class="modalG" id="qr-modalG">
+    <div class="modal-contentG">
+      <a class="close-btnG" href="#">✕</a>
+      <h3>پرداخت آنلاین</h3>
+      <p>لطفاً برای پرداخت، این QR را با اپلیکیشن بانکی اسکن کنید.</p>
+      <img alt="QR Code" src="https://api.qrserver.com/v1/create-qr-code/?data=https://pay.example.com&amp;size=180x180"/>
+      <p>پس از پرداخت موفقیت‌آمیز تایید کنید</p>
+      <button id="confirm-pay-btnG">تایید پرداخت</button>
+    </div>
+  </div>
+
+  <div id="success-msgG">پرداخت موفقیت‌آمیز بود ✔</div>
+
+  <script>
+    document.querySelectorAll('.pay-btnG').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('qr-modalG').style.display = 'flex';
+      });
+    });
+    document.querySelector('.close-btnG').addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('qr-modalG').style.display = 'none';
+    });
+    document.getElementById('qr-modalG').addEventListener('click', e => {
+      if (e.target === e.currentTarget) {
+        e.currentTarget.style.display = 'none';
+      }
+    });
+    const modalG = document.getElementById('qr-modalG');
+    const successMsgG = document.getElementById('success-msgG');
+    const confirmPayBtnG = document.getElementById('confirm-pay-btnG');
+
+    confirmPayBtnG.addEventListener('click', () => {
+      modalG.style.display = 'none';
+      const paymentSuccess = true;
+      if (paymentSuccess) {
+        successMsgG.style.backgroundColor = '#4CAF50';
+        successMsgG.textContent = 'پرداخت موفقیت‌آمیز بود ✔';
+      } else {
+        successMsgG.style.backgroundColor = '#f44336';
+        successMsgG.textContent = 'خطا در پرداخت! لطفاً دوباره تلاش کنید.';
+      }
+      successMsgG.style.display = 'block';
+      setTimeout(() => {
+        successMsgG.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

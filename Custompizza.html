@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>پیتزای خودت رو بساز!</title>
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="Custompizza-bodyC" >
+  <h1 class="main-titleCu">پیتزای خودت رو بساز!</h1>
+
+  <div class="containerCu">
+    <div class="pizza-imageCu" aria-label="تصویر پیتزا">
+      <img src="./image/piz1.png" alt="عکس پیتزا" />
+    </div>
+
+    <form class="options-wrapperCu" id="pizzaFormCu" aria-label="انتخاب مواد پیتزا">
+      <div class="rowCu">
+        <div class="categoryCu protein-categoryCu" aria-label="دسته پروتئین">
+          <h3 class="category-titleCu">پروتئین</h3>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="پپرونی" checked />
+            <span class="option-labelCu">پپرونی</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="بیکــن" />
+            <span class="option-labelCu">بیکــن</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="مرغ گریل" />
+            <span class="option-labelCu">مرغ گریل</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="استیک" />
+            <span class="option-labelCu">استیک</span>
+          </label>
+        </div>
+
+        <div class="categoryCu vegetable-categoryCu" aria-label="دسته سبزیجات">
+          <h3 class="category-titleCu">سبزیجات</h3>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="زیتون" checked />
+            <span class="option-labelCu">زیتون</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="فلفل دلمه‌ای" />
+            <span class="option-labelCu">فلفل دلمه‌ای</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="قارچ" checked />
+            <span class="option-labelCu">قارچ</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="هالوپینو" />
+            <span class="option-labelCu">هالوپینو</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="rowCu">
+        <div class="categoryCu sauce-categoryCu" aria-label="دسته سس">
+          <h3 class="category-titleCu">سس‌ها</h3>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="سس تند" checked />
+            <span class="option-labelCu">سس تند</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="سس پستو" />
+            <span class="option-labelCu">سس پستو</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="سس باربیکیو" />
+            <span class="option-labelCu">سس باربیکیو</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="سس سیر" />
+            <span class="option-labelCu">سس سیر</span>
+          </label>
+        </div>
+
+        <div class="categoryCu cheese-categoryCu" aria-label="دسته پنیر">
+          <h3 class="category-titleCu">پنیرها</h3>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="پنیر موزارلا" checked />
+            <span class="option-labelCu">پنیر موزارلا</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="پنیر پارمزان" />
+            <span class="option-labelCu">پنیر پارمزان</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="پنیر گودا" />
+            <span class="option-labelCu">پنیر گودا</span>
+          </label>
+          <label class="option-itemCu" tabindex="0">
+            <input type="checkbox" class="option-checkboxCu" value="پنیر چدار" />
+            <span class="option-labelCu">پنیر چدار</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="summaryCu" class="summaryCu" aria-live="polite" aria-atomic="true" role="region">
+        چیزی انتخاب نشده است.
+      </div>
+
+      <div class="mt-4">
+      <a href="./shop.html" class="btn btn-custom">افزودن به سبد خرید</a>
+      <a href="./menu.html" class="btn btn-custom">بازگشت به منو</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

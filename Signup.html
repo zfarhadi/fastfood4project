@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>فرم ثبت‌نام</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body class="reg-body">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="reg-glass-card">
+          <h2 class="text-center reg-title">فرم ثبت‌نام کاربر</h2>
+          <form id="registrationForm">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <input type="text" class="reg-input form-control" id="firstname" placeholder="نام" autocomplete="off" />
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="reg-input form-control" id="lastname" placeholder="نام خانوادگی" autocomplete="off" />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <input type="text" class="reg-input form-control" id="mobile" placeholder="شماره موبایل" autocomplete="off" />
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="reg-input form-control" id="email" placeholder="ایمیل" autocomplete="off" style="text-align: right;" />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <input type="password" class="reg-input form-control" id="password" placeholder="رمز عبور" autocomplete="off" />
+              </div>
+              <div class="col-md-6">
+                <input type="password" class="reg-input form-control" id="confirmPassword" placeholder="تکرار رمز عبور" autocomplete="off" />
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <select class="reg-select form-select" id="delivery">
+                  <option value="" disabled selected>شیوه تحویل</option>
+                  <option value="حضوری">حضوری</option>
+                  <option value="غیرحضوری">غیرحضوری</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <input type="text" id="birthdate" class="reg-input form-control" placeholder="تاریخ تولد" readonly />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <textarea class="reg-input form-control reg-textarea" id="address" rows="2" placeholder="آدرس خود را وارد کنید"></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="reg-btn btn btn-light">ثبت‌نام</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persian calendar -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#birthdate').persianDatepicker({
+        format: 'YYYY/MM/DD',
+        autoClose: true,
+        initialValue: false,
+        toolbox: {
+          calendarSwitch: { enabled: false },
+        },
+      });
+
+      $('#registrationForm').submit(function (e) {
+        e.preventDefault();
+        const data = {
+          firstname: $('#firstname').val().trim(),
+          lastname: $('#lastname').val().trim(),
+          mobile: $('#mobile').val().trim(),
+          email: $('#email').val().trim(),
+          password: $('#password').val(),
+          confirmPassword: $('#confirmPassword').val(),
+          delivery: $('#delivery').val(),
+          birthdate: $('#birthdate').val(),
+          address: $('#address').val().trim(),
+        };
+
+        console.log('اطلاعات ثبت‌نام:', data);
+        alert('اطلاعات شما با موفقیت ثبت شد');
+      });
+    });
+  </script>
+</body>
+</html>
